@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "portfolio",
+    "profiles",
 ]
 
 MIDDLEWARE = [
@@ -128,8 +129,6 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static/"  
-]
-MEDIA_ROOT= BASE_DIR / "uploads"
+STATICFILES_DIRS = [BASE_DIR / "static/"]
+MEDIA_ROOT = BASE_DIR / "uploads"
 MEDIA_URL = "/files/"

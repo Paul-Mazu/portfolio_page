@@ -1,0 +1,20 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block title %}All Profiles{% endblock title %}
+
+{% block content %}
+
+    <h1>Profiles Template</h1>
+    
+    {% for profile in profiles %}
+    <a href="{{profile.get_absolute_url}}">
+        <p>
+            <img src="{{ profile.profile_image.url }}" alt="profile-image">
+        </p>
+        <p>name: {{profile.name}}</p>
+        <p>short_desc: {{profile.short_desc}}</p>
+    </a>
+    
+    {% endfor %}
+
+{% endblock content %}
