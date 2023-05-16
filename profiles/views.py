@@ -1,5 +1,8 @@
 from django.shortcuts import render
 from .models import Profile
+from .forms import SignUpForm
+from django.views.generic import CreateView
+from django.urls import reverse_lazy
 
 
 def profiles(request):
@@ -12,3 +15,9 @@ def profiles_detail(request, username):
     return render(
         request, "profiles/profiles-detail.html", context={"profile": profile}
     )
+
+
+class SignUpView(CreateView):
+    form_class = SignUpForm
+    success_url = reverse_lazy("profiles:login")
+    template_name = "profiles/signup.html"
